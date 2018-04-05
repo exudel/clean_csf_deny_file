@@ -15,7 +15,7 @@ if [ -d "$DIRECTORY" ]; then
                	sleep 5s
                 sed -i '/[0-9]$/d' /etc/csf/csf.deny
                 echo "IP addresses are deleted from csf.deny "$DATE >> $LOG
-                find "$DIRECTORY" -cmin +1440 -name 'csf.deny*' -delete
+                # find "$DIRECTORY" -cmin +1440 -name 'csf.deny*' -delete
                 systemctl start csf > /dev/null 2>&1
        	else
                 echo "copy of csf.deny are not exists"$DATE >> $LOG
